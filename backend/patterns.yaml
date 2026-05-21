@@ -1,0 +1,88 @@
+economic:
+  indicators:
+    - pattern: '[{"POS": {"IN": ["ADJ", "NOUN"]}, "OP": "*"}, {"LOWER": {"in": ["economy", "economic", "finance", "financial", "gdp", "gnp", "growth", "market", "stock", "trade", "investment", "debt", "loan", "revenue", "profit", "loss", "inflation", "deflation", "recession", "depression", "boom", "bust", "bubble", "bailout", "stimulus", "austerity", "budget", "deficit", "surplus", "tax", "tariff", "interest rate", "exchange rate", "unemployment", "employment", "wage", "salary", "income", "poverty", "inequality", "supply", "demand", "production", "consumption", "consumer confidence", "business confidence", "manufacturing", "services", "industry", "sector"]}}]'
+    - pattern: '[{"LOWER": {"in": ["significant", "substantial", "massive", "major", "minor", "moderate", "slight", "gradual", "sharp", "steep", "rapid", "slow"]}}, {"LOWER": {"in": ["increase", "decrease", "decline", "rise", "fall", "growth", "contraction", "expansion", "surge", "drop", "jump", "spike", "plunge", "slump"]}}, {"LOWER": "in", "OP": "?"}, {"POS": {"IN": ["ADJ", "NOUN"]}, "OP": "*"}, {"LOWER": {"in": ["economy", "economic", "finance", "financial", "gdp", "gnp", "growth", "market", "stock", "trade", "investment", "debt", "loan", "revenue", "profit", "loss", "inflation", "deflation", "recession", "depression", "interest rate", "unemployment", "employment", "wage", "salary", "income"]}}]'
+    - pattern: '[{"LOWER": {"in": ["soar", "skyrocket", "plummet", "collapse", "surge", "spike", "plunge", "slump", "explode", "crash"]}}, {"POS": {"IN": ["ADJ", "NOUN"]}, "OP": "*"}, {"LOWER": {"in": ["economy", "economic", "finance", "financial", "gdp", "gnp", "growth", "market", "stock", "trade", "investment", "debt", "loan", "revenue", "profit", "loss", "inflation", "deflation", "recession", "depression", "interest rate", "unemployment", "employment"]}}]'
+  phrases:
+    - "significant increase in gdp"
+    - "major decline in stock market"
+    - "soaring inflation rates"
+    - "housing market bubble"
+    - "trade deficit reduction"
+    - "rising unemployment figures"
+    - "bull market rally"
+    - "bear market decline"
+    - "quantitative easing"
+    - "fiscal stimulus package"
+    - "economic recovery plan"
+
+political:
+  entities:
+    - pattern: '[{"LOWER": {"in": ["government", "presidential", "minister", "prime minister", "parliament", "congress", "senate", "mayor", "governor", "officer", "officials", "administration", "party", "parties", "policy", "policies", "election", "campaign", "vote", "votes", "voting", "voter", "voters", "ballot", "bill", "legislation", "law", "regulation", "reform", "democrat", "democratic", "republican", "gop", "conservative", "liberal", "progressive", "socialist", "communist", "fascist", "anarchist", "libertarian", "independent", "green party", "white house", "lawmaker", "politician", "congressman", "congresswoman", "senator", "representative", "speaker of the house", "house of representatives", "cabinet", "ambassador", "diplomat", "embassy", "consulate", "treaty", "alliance", "summit", "united nations", "nato", "european union", "brexit"]}}]'
+  phrases:
+    - "the White House"
+    - "the Republican Party"
+    - "the Democratic Party"
+    - "the Conservative Party"
+    - "the Labour Party"
+    - "the European Parliament"
+    - "vote of no confidence"
+    - "presidential election"
+    - "general election"
+    - "by-election"
+    - "referendum"
+
+controversy:
+  indicators:
+    - pattern: '[{"LOWER": {"in": ["scandal", "controversy", "accusation", "allegation", "criticism", "opposition", "protest", "demonstration", "reform", "measure", "law", "regulation", "ban", "investigation", "inquiry", "hearing", "debate", "dispute", "argument", "conflict", "corruption", "bribery", "fraud", "scam", "conspiracy", "hoax", "fake news", "misinformation", "disinformation", "propaganda", "lie", "falsehood", "deception", "manipulation", "cover-up", "whistleblower", "leak", "expose", "denial", "impeachment", "resignation", "crisis", "outrage", "scandalous", "controversial", "disputed", "heated", "tense", "charged", "scathing", "damning", "explosive", "shocking"]}}]'
+  phrases:
+    - "evidence of corruption"
+    - "alleged bribery"
+    - "mass protest"
+    - "heated debate"
+    - "public outcry"
+    - "political scandal"
+    - "conflict of interest"
+    - "abuse of power"
+    - "breach of trust"
+    - "cover-up attempt"
+    - "whistleblower complaint"
+
+conspiracy:
+  indicators:
+    - pattern: '[{"LOWER": {"in": ["deep state", "new world order", "shadow government", "false flag", "chemtrails", "geoengineering", "mind control", "hidden agenda", "secret plan", "secret agenda", "secret society", "secret group", "inside job", "rigged election", "stolen election", "suppressed information", "suppressed evidence", "censored", "censorship", "mainstream media", "msm", "big pharma", "big tech", "elite", "elites", "globalist", "globalists", "illuminati", "reptilian", "manufactured crisis", "manufactured pandemic", "plandemic", "scamdemic", "population control", "forced vaccination", "mandatory vaccine", "vaccine passport", "vaccine mandate", "vaccine side effect", "vaccine injury", "vaccine death", "bioweapon", "lab leak", "5g related to illness", "5g causing illness", "harmful vaccine", "dangerous vaccine", "depopulation agenda", "great reset", "agenda 21", "agenda 2030", "mkultra", "project mockingbird", "operation mockingbird", "operation northwoods", "illuminati", "freemasons", "bilderberg group", "council on foreign relations", "trilateral commission", "bohemian grove", "cult", "satanic", "pizzagate", "qanon", "adrenochrome", "fema camps", "martial law", "new age", "false flag operation", "crisis actor", "weather modification", "haarp", "artificial intelligence takeover", "transhumanism", "alien", "ufo", "extraterrestrial", "roswell", "area 51"]}}]'
+  phrases:
+    - "deep state conspiracy"
+    - "new world order agenda"
+    - "false flag operation"
+    - "inside job theory"
+    - "rigged election claims"
+    - "suppressed evidence"
+    - "mainstream media bias"
+    - "big pharma cover-up"
+    - "big tech censorship"
+    - "globalist elite"
+    - "illuminati confirmed"
+    - "plandemic hoax"
+    - "vaccine side effects"
+    - "5g conspiracy"
+
+climate_change:
+  indicators:
+    - pattern: '[{"LOWER": {"in": ["climate change", "global warming", "greenhouse effect", "greenhouse gas", "carbon footprint", "carbon emissions", "sea level rise", "extreme weather", "deforestation", "fossil fuels", "renewable energy", "solar energy", "wind energy", "hydro energy", "geothermal energy", "sustainability", "sustainable development", "paris agreement", "emissions", "pollution", "air pollution", "water pollution", "plastic pollution", "drought", "flood", "wildfire", "hurricane", "cyclone", "typhoon", "tornado", "glacier melt", "ice cap", "arctic", "antarctic", "extinction", "biodiversity loss", "ocean acidification", "coral bleaching", "climate denial", "climate skeptic", "climate science", "climate model", "climate action", "climate justice", "climate refugee", "carbon tax", "carbon trading", "cap and trade", "net zero", "climate emergency", "climate crisis", "global cooling", "climate hoax", "climate fraud", "climate alarmism", "climate change denial", "climate change mitigation", "climate change adaptation", "climate change impact", "climate change effect", "climate change solution", "climate change policy", "climate change agreement", "climate change debate", "climate change conference", "climate change research", "climate change activist", "climate change movement"]}}]'
+  phrases:
+    - "climate change denial"
+    - "global warming hoax"
+    - "record temperatures"
+    - "rising sea levels"
+    - "melting glaciers"
+    - "extreme weather events"
+    - "loss of biodiversity"
+    - "carbon emissions reduction"
+    - "renewable energy sources"
+    - "sustainable practices"
+    - "climate action now"
+    - "there is no planet b"
+    - "save the planet"
+    - "climate emergency"
+    - "climate justice"

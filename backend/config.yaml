@@ -1,0 +1,116 @@
+bert_model: "C:\\Users\\clem9\\OneDrive\\Bureau\\finetuned_model"
+sbert_model: "all-mpnet-base-v2"
+spacy_model: "en_core_web_trf"
+nltk_ressources:
+  - "punkt"
+  - "averaged_perceptron_tagger"
+  - "vader_lexicon"
+threshold: 0.8
+importance_threshold: 3
+whitelist:
+  sources:
+    - "cnn.com"
+    - "edition.cnn.com"
+    - "nytimes.com"
+    - "bbc.com"
+    - "bbc.co.uk"
+    - "reuters.com"
+    - "apnews.com"
+    - "lemonde.fr"
+    - "lefigaro.fr"
+    - "liberation.fr"
+    - "la-croix.com"
+    - "lesechos.fr"
+    - "ouest-france.fr"
+    - "20minutes.fr"
+    - "francetvinfo.fr"
+    - "washingtonpost.com"
+    - "theguardian.com"
+    - "wsj.com"
+    - "latimes.com"
+    - "usatoday.com"
+    - "nbcnews.com"
+    - "cbsnews.com"
+    - "abcnews.go.com"
+    - "bloomberg.com"
+    - "forbes.com"
+    - "time.com"
+    - "npr.org"
+    - "pbs.org"
+    - "politico.com"
+    - "thehill.com"
+    - "vox.com"
+    - "slate.com"
+    - "huffpost.com"
+    - "theatlantic.com"
+regex:
+  number_pattern: '\d+(?:,\d{3})*(?:\.\d+)?(?:\s?(?:[kmbKMB]?\s?(?:million|billion|trillion|thousand|hundred)?|€|\$|euros?|dollars?|%|percent))?'
+  economic_indicators:
+    - '(fake|false|manipulated|fabricated|distorted|inflated|exaggerated)\s+(econom(?:y|ic|ies)|financ(?:e|ial|es)|GDP|GNP|growth|market|stock|trade|investment|debt|loan|revenue|profit|loss)'
+    - '(doubtful|questionable)\s+(investment|profit)'
+    - '(hidden|concealed)\s+(debt|loan|loss)'
+    - '(no\s+|not\s+|without\s+|lack\s+of\s+)(?:evidence\s+of\s+)?(econom(?:y|ic|ies)|financ(?:e|ial|es)|market|stock|trade|investment|growth)'
+    - '(econom(?:y|ic|ies)|financ(?:e|ial|es)|budget(?:ary)?|deficit|growth|inflation(?:ary)?|GDP|GNP|unemployment|employment|market|stock|trade|investment|debt|loan|tax(?:es)?|revenue|expenditure|recession|depression|recovery|profit|loss|interest\s+rate)'
+    - '(significant|substantial|massive|major|minor)\s+(increase|decrease|decline|rise|fall)\s+(in\s+)?(econom(?:y|ic|ies)|financ(?:e|ial|es)|GDP|GNP|growth|market|stock|trade|investment|debt|loan|revenue|profit|loss)'
+    - '(soar|skyrocket|plummet|collapse)\s+(econom(?:y|ic|ies)|financ(?:e|ial|es)|GDP|GNP|growth|market|stock|trade|investment|debt|loan|revenue|profit|loss)'
+  political_entities:
+    - 'government(?:al)?'
+    - 'president(?:ial)?'
+    - 'minister(?:ial)?'
+    - 'parliament(?:ary)?'
+    - 'congress(?:ional)?'
+    - 'senate'
+    - 'mayor(?:al)?'
+    - 'officer?|officials?'
+    - 'administration'
+    - 'part(?:y|ies)'
+    - 'polic(?:y|ies)'
+    - 'election'
+    - 'campaign'
+    - 'vot(?:e|es|ing|er|ers)'
+    - 'ballot'
+    - 'bill'
+    - 'legislation'
+    - 'Democrat(?:ic)?'
+    - 'Republican'
+    - 'GOP'
+    - 'White House'
+    - 'lawmaker'
+    - 'politician'
+  controversy_indicators:
+    - '(no\s+|not\s+|without\s+|lack\s+of\s+)?(?:evidence\s+of\s+)?(scandal|controvers(?:y|ies)|accusation(?:s)?|criticism|opposition|protest(?:s)?|demonstration(?:s)?|reform|measure|law|regulation|ban|investigation|debate|dispute|corruption|bribery|fraud|conspiracy|hoax|fake\s+news|misinformation|disinformation|propaganda|lie|falsehood|deception|manipulation|cover-up|whistleblower|leak|expose|denial|impeachment|resignation|crisis|outrage|scam)'
+    - '(violent|heated|intense)\s+(debate|dispute|protest|demonstration)'
+    - '(mass|large-scale)\s+(protest|demonstration)'
+    - '(alleged|accused\s+of)\s+(corruption|bribery|fraud|conspiracy|deception)'
+    - '(investigation\s+into)\s+(corruption|bribery|fraud|conspiracy|scandal)'
+    - '(evidence\s+of)\s+(corruption|bribery|fraud|conspiracy|scandal|manipulation)'
+    - '(guilty\s+of)\s+(corruption|bribery|fraud|conspiracy|deception)'
+    - '(charged\s+with)\s+(corruption|bribery|fraud|conspiracy|deception)'
+  source_indicators:
+    - 'according to'
+    - 'say(?:s|ing)?'
+    - 'claim(?:s|ed|ing)?'
+    - 'stat(?:e|es|ed|ing)'
+    - 'announc(?:e|es|ed|ing|ment|ments)'
+    - 'report(?:s|ed|ing)?'
+    - 'stud(?:y|ies)'
+    - 'poll'
+    - 'survey'
+    - 'research'
+    - 'evidence'
+    - 'source'
+    - 'expert'
+    - 'witness(?:es)?'
+    - 'official'
+    - 'analyst(?:s)?'
+    - 'informant'
+    - 'according to (?:an|a|the)\s*(?:official|expert|study|report|source)'
+  conspiracy_indicators:
+    - '(no\s+|not\s+|without\s+|lack\s+of\s+)?(?:evidence\s+of\s+)?(deep\s+state|new\s+world\s+order|shadow\s+government|false\s+flag|chemtrails|geoengineering|mind\s+control|hidden\s+agenda|secret(?:ive)?\s+(?:plan|agenda|society|group)|cover-up|inside\s+job|rigged\s+election|stolen\s+election|suppress(?:ed|ion|ing)?\s+(?:information|evidence)|censor(?:ed|ship)?|mainstream\s+media|big\s+pharma|big\s+tech|elite(?:s)?|globalist(?:s)?|illuminati|reptilian(?:s)?|manufactured\s+(?:crisis|pandemic)|plandemic|scamdemic|population\s+control|forced\s+vaccination(?:s)?|mandatory\s+vaccine(?:s)?|vaccine\s+(?:passport|mandate|side\s+effect|injury|death)|bioweapon|lab\s+leak|5G\s+related\s+to\s+illness(?:es)?|5G\s+causing\s+illness(?:es)?|(?:harmful|dangerous)\s+vaccine(?:s)?|depopulation\s+agenda)'
+    - '(secret|hidden)\s+(agenda|plan|motive)'
+    - '(rigged|stolen)\s+(election)'
+    - '(fake|false|planted)\s+(evidence)'
+    - '(controlled|manipulated)\s+by\s+(deep\s+state|shadow\s+government|elite(?:s)?|globalist(?:s)?|big\s+pharma|big\s+tech)'
+    - '(covid|covid-19|coronavirus)\s+(hoax|scam|lie|falsehood|conspiracy|fake|not\s+real)'
+    - '(vaccine|vaccines|vaccination)\s+(injury|injuries|death|deaths|side\s+effect|side\s+effects|complication|complications)'
+    - '(fake|false|misleading|unproven)\s+(covid|covid-19|coronavirus)\s+(information|news|report|study|statistic)'
